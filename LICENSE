@@ -1,23 +1,42 @@
-From the original 8values:
+FemScale (Feminist Perspective Scale Online) 
+Copyright (c) 2021 femscale
 
-The MIT License
 
-Copyright (c) 2017 8values. http://8values.github.io.
+1. 
+FemScale is based on LeftValues (https://leftvalues.github.io/), which in turn is based on 8values (https://8values.github.io/). Also, parts of codes are copied from 8values-ja (https://8values-ja.github.io/index.html). LeftValues, 8values, and 8values-ja are all distributed under the MIT License. 
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+The Feminist Perspective Scale (FORM 2 or FPS-2) was created by Nancy M. Henley et al. We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the copyright holder. We use this Scale solely to educate those who are interested in feminism and its values. Questions used in FemScale are based on the Scale published in the following article:
+Henley, N. M., Meng, K., Brien, D. O., McCarthy, W. J., Sockloskie, R. J. (1998). Developing a scale to measure the diversity of feminist attitudes. Psychology of Women Quarterly, 22, 317–348. https://doi.org/10.1111/j.1471-6402.1998.tb00158.x
+
+Image file "womensmarch_voa.jpg" is originally by B. Allen for Voice of America (VOA). All text, audio and video material produced exclusively by the Voice of America is in the public domain (https://learningenglish.voanews.com/p/6021.html , https://learningenglish.voanews.com/p/6861.html ). The image was cropped by femscale.
+
+The original image was retrieved on September 12, 2021 from:
+Ball, Anne. (2017, Jan 22). Hundreds of thousands attend Women's March on Washington. VOA. https://learningenglish.voanews.com/a/hundreds-of-thousands-attend-womens-march-on-washington/3686717.html
+
+2.
+FOR ALL FILES LOCATED IN DIRECTORY "lang", ALL STRINGS CORRESPONDING TO "question_0" TO "question_59" ARE COPYRIGHTED BY HENLEY (1989, 1997).
+
+The Feminist Perspectives Scale, Copyright 1989, 1997 by Nancy M. Henley. Permission is given for its use, or use of any part of it, without charge, for research and educational purposes only. This scale is expressly not to be used for personnel screening (business, military, academic, or any other type). Anyone with knowledge of its use for such screening is urged to contact N. M. Henley, Psychology Department, UCLA, Los Angeles, CA 90024-1563, giving date, user, and any other pertinent information known. This notice must appear on all copies of the scale reproduced.
+
+3.
+All codes EXCEPT FOR THOSE MENTIONED IN SECTION 2 are under the MIT License.
+
+EXCEPT FOR ALL STRINGS CORRESPONDING TO "question_0" TO "question_59" IN ANY
+OF THE FILES LOCATED UNDER DIRECTORY "lang",
+permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

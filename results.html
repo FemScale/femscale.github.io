@@ -2,431 +2,335 @@
 <html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700%7CRoboto:400,700" rel="stylesheet">
-    <link href='style.css' rel='stylesheet' type='text/css'>
-    <title>LeftValues Results</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="shortcut icon" type="image/png" href="icon.png">
     <meta charset="utf-8">
-    <script type="application/javascript" src="ideologies.js">
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>FemScale - Feminist Perspective Scale Online</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href='reset.css' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <script type="application/javascript" src="ideologies.js"></script>
+    <link rel="icon" type="image/png" href="favicon/icon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/icon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/icon-192x192.png">
+    <link rel="apple-touch-icon" type="image/png" href="favicon/apple-touch-icon-180x180.png">
 </head>
 
 <body>
-    <h1>LeftValues</h1>
+    <h1 class="top">FemScale</h1>
     <select id="langPicker"></select>
     <hr>
 
-    <h1 data-i18n="result_h1">Results</h1>
+<h1 data-i18n="result_h1">Results</h1>
+<div class="result_wrapper">
+    <div class="text-wrapper">
+        <h2 data-i18n="result_h2_match">Closest Match:<span class="weight-300" id="ideology-label"></span></h2>
+        <p data-i18n="result_p">You can send these results by copying and pasting the URL at the top of the page or using the download link below.</p>
+        <input id="copyTarget" type="text" value="https://femscale.github.io" readonly>
+        <button onclick="copyToClipboard()">Copy URL</button>
+    </div>
+</div>
+<div class="result_wrapper">
+    <div class="section-wrapper">
+        <div class="image-wrapper">
+            <p class="download"><a id="btnDownload" data-i18n="result_download" download="femscale_result.png" href="">Download Result</a></p>
+                <canvas id="myChart"></canvas>
+            <p class="ref" data-i18n="result_p_ref">Values for mean subscale scores ("avg.") are cited from Table 4, Column "Nonstudent sample" published in the following:</p><span class='reference'>Henley, N. M., Meng, K., Brien, D. O., McCarthy, W. J., Sockloskie, R. J. (1998). Developing a scale to measure the diversity of feminist attitudes. Psychology of Women Quarterly, 22, 317–348. <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>https://doi.org/10.1111/j.1471-6402.1998.tb00158.x</a></span>
+        </div>
+    </div>
+    <div class="section-wrapper">
+        <div class="text-wrapper">
+            <p style="font-style: italic" data-i18n="coming_soon">Short desriptions for each perspectives coming soon!</p>
+            <p id="ideodesc-label"></p>
+            <div class="twitter-share">
+                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=femscale" class="twitter-share-button">Tweet!</a></p>
+            </div>
+        </div>
+    </div>
+</div>    
 
-    <h2><span class="weight-300" id="a-label"></span></h2>
-    <div class="axis">
-        <img id="img-revolution" src="value_images/revolution.png" height="128pt" />
-        <div class="bar revolution" id="bar-revolution">
-            <div class="text-wrapper" id="revolution"></div>
-        </div>
-        <div class="bar reform" id="bar-reform">
-            <div class="text-wrapper" id="reform"></div>
-        </div>
-        <img id="img-reform" src="value_images/reform.png" height="128pt" />
+<div class="result_wrapper">
+    <div class="text-wrapper">
+        <h2 data-i18n="result_h2_next_matches">Next closest matches</h2>
+            <p data-i18n="result_p_next_matches">With your closest match as 100% and farthest as 0%, here is how closely you matched the other ideologies. Want to know more? Check out our <a href='additional_info.html'>Additional Info</a> page!</p>
+            <p><ol id="next-matches"></ol></p>
     </div>
-    <h2><span class="weight-300" id="b-label"></span></h2>
-    <div class="axis">
-        <img id="img-scientific" src="value_images/scientific.png" height="128pt" />
-        <div class="bar scientific" id="bar-scientific">
-            <div class="text-wrapper" id="scientific"></div>
-        </div>
-        <div class="bar utopian" id="bar-utopian">
-            <div class="text-wrapper" id="utopian"></div>
-        </div>
-        <img id="img-utopian" src="value_images/utopian.png" height="128pt" />
+</div>
+<div class="result_wrapper">
+    <div class="text-wrapper">
+        <h2 data-i18n="result_h2_issues">I don't like my scores!</h2>
+            <p data-i18n="result_p_issues">Please remember that you are not intended to get a 100% score in any of the categories. The point of the quiz is to challenge your views and understand the various perspectives feminism offer. If you have any suggestions or constructive criticism, please open an issue on the <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>.</p>
     </div>
-    <h2><span class="weight-300" id="c-label"></span></h2>
-    <div class="axis">
-        <img id="img-central" src="value_images/central.png" height="128pt" />
-        <div class="bar central" id="bar-central">
-            <div class="text-wrapper" id="central"></div>
-        </div>
-        <div class="bar decentral" id="bar-decentral">
-            <div class="text-wrapper" id="decentral"></div>
-        </div>
-        <img id="img-decentral" src="value_images/decentral.png" height="128pt" />
+</div>
+<div class="result_wrapper">
+    <div class="text-wrapper">
+        <h2 data-i18n="result_h2_feedback">Feedback</h2>
+            <p data-i18n="result_p_feedback">FemScale respects your privacy. However, we still want a way to get your feedback. If you can help us, please fill out <a href='https://forms.gle/VfKqtp6vNMKBMoRm8'>this form</a> (English and Japanese available)! <b>We will ask you to paste the Results URL (or type in the Results by hand).</b> Also, please help us improve the quiz at our <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>!</p>
     </div>
-    <h2><span class="weight-300" id="d-label"></span></h2>
-    <div class="axis">
-        <img id="img-international" src="value_images/international.png" height="128pt" />
-        <div class="bar international" id="bar-international">
-            <div class="text-wrapper" id="international"></div>
-        </div>
-        <div class="bar national" id="bar-national">
-            <div class="text-wrapper" id="national"></div>
-        </div>
-        <img id="img-national" src="value_images/national.png" height="128pt" />
+</div>
+<div class="result_wrapper">
+    <div class="text-wrapper">
+        <h2 data-i18n="index_h2_notice">Notice</h2>
+        <p data-i18n="notice_important">All questions are copyrighted by Henley (1989, 1997). <b>We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the copyright holder</b>. We use this Scale solely to educate those who are interested in feminism and its values.</p>
+        <p data-i18n="notice_before">The following notice is by Henley, the original creator of FPS-2:</p>
+        <p data-i18n="notice_quote" class="quote">
+        "The Feminist Perspectives Scale, Copyright 1989, 1997 by Nancy M. Henley. Permission is given for its use, or use of any part of it, without charge, for research and educational purposes only. This scale is expressly not to be used for personnel screening (business, military, academic, or any other type). Anyone with knowledge of its use for such screening is urged to contact N. M. Henley, Psychology Department, UCLA, Los Angeles, CA 90024-1563, giving date, user, and any other pertinent information known. This notice must appear on all copies of the scale reproduced."</p>
     </div>
-    <h2><span class="weight-300" id="e-label"></span></h2>
-    <div class="axis">
-        <img id="img-party" src="value_images/party.png" height="128pt" />
-        <div class="bar party" id="bar-party">
-            <div class="text-wrapper" id="party"></div>
-        </div>
-        <div class="bar union" id="bar-union">
-            <div class="text-wrapper" id="union"></div>
-        </div>
-        <img id="img-union" src="value_images/union.png" height="128pt" />
-    </div>
-    <h2><span class="weight-300" id="f-label"></span></h2>
-    <div class="axis">
-        <img id="img-industry" src="value_images/industry.png" height="128pt" />
-        <div class="bar industry" id="bar-industry">
-            <div class="text-wrapper" id="industry"></div>
-        </div>
-        <div class="bar ecology" id="bar-ecology">
-            <div class="text-wrapper" id="ecology"></div>
-        </div>
-        <img id="img-ecology" src="value_images/ecology.png" height="128pt" />
-    </div>
-    <h2><span class="weight-300" id="g-label"></span></h2>
-    <div class="axis">
-        <img id="img-conservative" src="value_images/conservative.png" height="128pt" />
-        <div class="bar conservative" id="bar-conservative">
-            <div class="text-wrapper" id="conservative"></div>
-        </div>
-        <div class="bar progressive" id="bar-progressive">
-            <div class="text-wrapper" id="progressive"></div>
-        </div>
-        <img id="img-progressive" src="value_images/progressive.png" height="128pt" />
-    </div>
-    <h2 data-i18n="result_h2_match">Closest Match:<span class="weight-300" id="ideology-label"></span></h2>
-    <h3><span class="weight-300" id="ideodesc-label"></span></h3>
-    <p data-i18n="result_url"><br>You can send these results by copying and pasting the URL at the top of the page or
-        using the image below.</p>
+</div>
+<HR>
+<section>
+<button data-i18n="result_back" class="start" onclick="location.href='index.html';">Restart</button><br>
+</section>
 
-    <h2 data-i18n="result_h2_next_matches">Next closest matches</h2>
-    <p data-i18n="next_matches_percent">With your closest match as 100% and farthest as 0%, here is how closely you
-        matched the other ideologies.</p>
 
-    <dl id="next-matches"></dl>
-
-    <h2 data-i18n="result_h2_score">I don't like my scores!</h2>
-    <p data-i18n="result_issues">Please remember that you are not intended to get a 100% score in any of the categories.
-        The point of the quiz is to challenge your views. If you have any suggestions or constructive criticism please
-        fill out this <a href="https://forms.gle/6WZYMb5GXkkDLhxr5">short form</a> or open an issue on the <a
-            href="https://github.com/LeftValues/leftvalues.github.io">GitHub Page</a>.</p>
-    <hr />
-    <canvas id="banner" width=800 height=1000 style="font-family:Montserrat"></canvas>
-    <button data-i18n="result_back" class="button" onclick="location.href='index.html';"
-        style="background-color: #2196f3;">Back</button> <br>
-    <!-- Privacy respecting Statcounter code for LeftValues http://leftvalues.github.io -->
-    <script type="text/javascript">
-        var sc_project = 12079783;
-        var sc_invisible = 1;
-        var sc_security = "f3285a9d";
-        var sc_https = 1;
-        if (navigator.doNotTrack != 1) {
-            var statcounterscript = document.createElement('script');
-            statcounterscript.setAttribute("type", "text/javascript");
-            statcounterscript.setAttribute("src", "https://www.statcounter.com/counter/counter.js");
-            document.getElementsByTagName("body")[0].appendChild(statcounterscript);
-        }
-    </script>
-    <!-- End of Statcounter Code -->
-    <!-- JavaScript for the test itself -->
-    <script type="application/javascript" src="i18n.js"></script>
-    <script>
-        /* global i18n, loadTranslation, ideologies */
-        function getQueryVariable (variable) {
+<!-- JavaScript for the test itself -->
+<script type="application/javascript" src="i18n.js"></script>
+<script>
+    /* global i18n, loadTranslation, ideologies */
+    function getQueryVariable (variable) {
         var query = window.location.search.substring(1)
         var vars = query.split('&')
         for (var i = 0; i < vars.length; i++) {
             var pair = vars[i].split('=')
             if (pair[0] === variable) {
-            return pair[1]
+                return pair[1]
             }
         }
         return (NaN)
-        }
+    }
 
-        function setBarValue (name, value) {
-        const innerel = document.getElementById(name)
-        const outerel = document.getElementById('bar-' + name)
-        outerel.style.width = (value + '%')
-        innerel.innerHTML = (value + '%')
-        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
-            innerel.style.visibility = 'hidden'
-        }
-        }
-
-        function setLabel (val, ary) {
-        ary = ary.split(',')
-        if (val > 100) {
-            return ''
-        } else
-        if (val > 90) {
-            return ary[0]
-        } else
-        if (val > 75) {
-            return ary[1]
-        } else
-        if (val > 60) {
-            return ary[2]
-        } else
-        if (val >= 40) {
-            return ary[3]
-        } else
-        if (val >= 25) {
-            return ary[4]
-        } else
-        if (val >= 10) {
-            return ary[5]
-        } else
-        if (val >= 0) {
-            return ary[6]
-        } else {
-            return ''
-        }
-        }
-
-        function getIdeologyNameByIndex (name) {
+    function getIdeologyNameByIndex (name) {
         return i18n.getString(`ideology_${name}_name`)
-        }
+    };
 
-        function getIdeologyDescriptionByIndex (name) {
+    function getIdeologyDescriptionByIndex (name) {
         return i18n.getString(`ideology_${name}_desc`)
-        }
-
-        const revolution = getQueryVariable('a')
-        const scientific = getQueryVariable('b')
-        const central = getQueryVariable('c')
-        const international = getQueryVariable('d')
-        const party = getQueryVariable('e')
-        const industry = getQueryVariable('f')
-        const conservative = getQueryVariable('g')
-        const reform = (100 - revolution).toFixed(1)
-        const utopian = (100 - scientific).toFixed(1)
-        const decentral = (100 - central).toFixed(1)
-        const national = (100 - international).toFixed(1)
-        const union = (100 - party).toFixed(1)
-        const ecology = (100 - industry).toFixed(1)
-        const progressive = (100 - conservative).toFixed(1)
-
-        setBarValue('revolution', revolution)
-        setBarValue('reform', reform)
-        setBarValue('utopian', utopian)
-        setBarValue('scientific', scientific)
-        setBarValue('central', central)
-        setBarValue('decentral', decentral)
-        setBarValue('national', national)
-        setBarValue('international', international)
-        setBarValue('party', party)
-        setBarValue('union', union)
-        setBarValue('industry', industry)
-        setBarValue('ecology', ecology)
-        setBarValue('conservative', conservative)
-        setBarValue('progressive', progressive)
-
-        loadTranslation().then(() => {
-            document.getElementById('a-label').innerHTML = setLabel(revolution, i18n.getString(
-                'result_a_label'))
-            document.getElementById('b-label').innerHTML = setLabel(scientific, i18n.getString(
-                'result_b_label'))
-            document.getElementById('c-label').innerHTML = setLabel(central, i18n.getString('result_c_label'))
-            document.getElementById('d-label').innerHTML = setLabel(international, i18n.getString(
-                'result_d_label'))
-            document.getElementById('e-label').innerHTML = setLabel(party, i18n.getString('result_e_label'))
-            document.getElementById('f-label').innerHTML = setLabel(industry, i18n.getString('result_f_label'))
-            document.getElementById('g-label').innerHTML = setLabel(conservative, i18n.getString(
-                'result_g_label'))
-
-            let ideology = ''
-            let ideodesc = ''
-            const ideologyIndexAndDistance = []
-            var closestMatch = {}
-
-            let index = 0
-            for (const name of Object.keys(ideologies)) {
-                let dist = 0
-                dist += Math.pow(Math.abs(ideologies[name].a - revolution), 2)
-                dist += Math.pow(Math.abs(ideologies[name].c - central), 2)
-                dist += Math.pow(Math.abs(ideologies[name].b - scientific), 2)
-                dist += Math.pow(Math.abs(ideologies[name].d - international), 2)
-                dist += Math.pow(Math.abs(ideologies[name].e - party), 2)
-                dist += Math.pow(Math.abs(ideologies[name].f - industry), 2)
-                dist += Math.pow(Math.abs(ideologies[name].g - conservative), 2)
-
-                // ideologyToDistance[name] = dist
-                ideologyIndexAndDistance.push({
+    };    
+    function getAxisNameByIndex (name) {
+        return i18n.getString(`axis_${name}`)
+    };
+    function tweetText (name) {
+    return i18n.getString(`tweet_text_${name}`)
+    };
+    const conservative = getQueryVariable('a')
+    const liberal = getQueryVariable('b')
+    const radical = getQueryVariable('c')
+    const socialist = getQueryVariable('d')
+    const cultural = getQueryVariable('e')
+    const womanism = getQueryVariable('f')
+    const femscore = (liberal /5 + radical /5 + socialist/5 + cultural/5 + womanism/5).toFixed(2)
+    
+    const conservative_dev = ((conservative - 32.11) / 9.62 * 10 + 50).toFixed(2)
+    const liberal_dev = ((liberal - 49.89 ) / 8.31 * 10 + 50).toFixed(2)
+    const radical_dev = ((radical - 37.29) / 10.67 *  10 + 50).toFixed(2)
+    const socialist_dev = ((socialist -35.47)/10.11 * 10 + 50).toFixed(2)
+    const cultural_dev = ((cultural - 37.46)/8.56 *10 + 50).toFixed(2)
+    const womanism_dev = ((womanism - 43.22)/9.09 * 10 + 50).toFixed(2)
+      
+    const conservative_henley1998 = ((32.11-10)/60*100).toFixed(2)
+    const liberal_henley1998 = ((49.89-10)/60*100).toFixed(2)
+    const radical_henley1998 = ((37.29-10)/60*100).toFixed(2)
+    const socialist_henley1998 = ((35.47-10)/60*100).toFixed(2)
+    const cultural_henley1998 = ((37.46-10)/60*100).toFixed(2)
+    const womanism_henley1998 = ((43.22-10)/60*100).toFixed(2)
+    const femscore_henley1998 = ((204.59-50)/300*100).toFixed(2)
+    
+    loadTranslation().then(() => {
+        let ideology = ''
+        let ideodesc = ''
+        const ideologyIndexAndDistance = []
+        var closestMatch = {}
+        let index = 0
+        for (const name of Object.keys(ideologies)) {
+            let dist = 0
+            dist += Math.pow(Math.abs(ideologies[name].a - conservative_dev), 2)
+            dist += Math.pow(Math.abs(ideologies[name].b - liberal_dev), 2)
+            dist += Math.pow(Math.abs(ideologies[name].c - radical_dev), 2)
+            dist += Math.pow(Math.abs(ideologies[name].d - socialist_dev), 2)
+            dist += Math.pow(Math.abs(ideologies[name].e - cultural_dev), 2)
+            dist += Math.pow(Math.abs(ideologies[name].f - womanism_dev), 2)
+        
+            // ideologyToDistance[name] = dist
+            ideologyIndexAndDistance.push({
                 distance: dist,
                 name,
                 index
-                })
-                index++
-            }
-
-            ideologyIndexAndDistance.sort(function (a, b) {
-                return a.distance - b.distance
             })
-
-            const distances = ideologyIndexAndDistance.map(function (indexAndDistance) {
-                return indexAndDistance.distance
-            })
-
-            const closestDistance = distances[0]
-            const farthestDistance = distances[distances.length - 1]
-            const distanceSpan = farthestDistance - closestDistance
-
-            closestMatch = ideologyIndexAndDistance[0]
-            document.getElementById('ideology-label').innerHTML = getIdeologyNameByIndex(closestMatch.name)
-            document.getElementById('ideodesc-label').innerHTML = getIdeologyDescriptionByIndex(closestMatch
-                .name)
-
-            const nextMatches = document.getElementById('next-matches')
-            nextMatches.innerHTML = ideologyIndexAndDistance.slice(1).map(function (indexAndDistance) {
-                const name = indexAndDistance.name
-                ideology = getIdeologyNameByIndex(name)
-                ideodesc = getIdeologyDescriptionByIndex(name)
-                const relativeDistance = 1 - (indexAndDistance.distance - closestDistance) /
-                                distanceSpan
-                const relativeDistancePercent = Math.round(relativeDistance * 1000) / 10
-                return '<dt>' + ideology + ': ' + relativeDistancePercent + '%</dt>' +
-                                '<dd>' + ideodesc + '</dd>'
-            }).join('\n')
-
-            const c = document.getElementById('banner')
-            const ctx = c.getContext('2d')
-            ctx.fillStyle = '#EEEEEE'
-            ctx.fillRect(0, 0, 800, 1000)
-
-            let img = document.getElementById('img-revolution')
-            ctx.drawImage(img, 20, 170, 100, 100)
-            img = document.getElementById('img-reform')
-            ctx.drawImage(img, 680, 170, 100, 100)
-            img = document.getElementById('img-scientific')
-            ctx.drawImage(img, 20, 290, 100, 100)
-            img = document.getElementById('img-utopian')
-            ctx.drawImage(img, 680, 290, 100, 100)
-            img = document.getElementById('img-central')
-            ctx.drawImage(img, 20, 410, 100, 100)
-            img = document.getElementById('img-decentral')
-            ctx.drawImage(img, 680, 410, 100, 100)
-            img = document.getElementById('img-international')
-            ctx.drawImage(img, 20, 530, 100, 100)
-            img = document.getElementById('img-national')
-            ctx.drawImage(img, 680, 530, 100, 100)
-            img = document.getElementById('img-party')
-            ctx.drawImage(img, 20, 650, 100, 100)
-            img = document.getElementById('img-union')
-            ctx.drawImage(img, 680, 650, 100, 100)
-            img = document.getElementById('img-industry')
-            ctx.drawImage(img, 20, 770, 100, 100)
-            img = document.getElementById('img-ecology')
-            ctx.drawImage(img, 680, 770, 100, 100)
-            img = document.getElementById('img-conservative')
-            ctx.drawImage(img, 20, 890, 100, 100)
-            img = document.getElementById('img-progressive')
-            ctx.drawImage(img, 680, 890, 100, 100)
-
-            ctx.fillStyle = '#222222'
-            ctx.fillRect(120, 180, 560, 80)
-            ctx.fillRect(120, 300, 560, 80)
-            ctx.fillRect(120, 420, 560, 80)
-            ctx.fillRect(120, 540, 560, 80)
-            ctx.fillRect(120, 660, 560, 80)
-            ctx.fillRect(120, 780, 560, 80)
-            ctx.fillRect(120, 900, 560, 80)
-            ctx.fillStyle = '#890000'
-            ctx.fillRect(120, 184, 5.6 * revolution - 2, 72)
-            ctx.fillStyle = '#FC5959'
-            ctx.fillRect(682 - 5.6 * reform, 184, 5.6 * reform - 2, 72)
-            ctx.fillStyle = '#88232B'
-            ctx.fillRect(120, 304, 5.6 * scientific - 2, 72)
-            ctx.fillStyle = '#7F0037'
-            ctx.fillRect(682 - 5.6 * utopian, 304, 5.6 * utopian - 2, 72)
-            ctx.fillStyle = '#560000'
-            ctx.fillRect(120, 424, 5.6 * central - 2, 72)
-            ctx.fillStyle = '#000000'
-            ctx.fillRect(682 - 5.6 * decentral, 424, 5.6 * decentral - 2, 72)
-            ctx.fillStyle = '#782F52'
-            ctx.fillRect(120, 544, 5.6 * international - 2, 72)
-            ctx.fillStyle = '#7F3300'
-            ctx.fillRect(682 - 5.6 * national, 544, 5.6 * national - 2, 72)
-            ctx.fillStyle = '#963B33'
-            ctx.fillRect(120, 664, 5.6 * party - 2, 72)
-            ctx.fillStyle = '#7F333B'
-            ctx.fillRect(682 - 5.6 * union, 664, 5.6 * union - 2, 72)
-            ctx.fillStyle = '#804E00'
-            ctx.fillRect(120, 784, 5.6 * industry - 2, 72)
-            ctx.fillStyle = '#76890B'
-            ctx.fillRect(682 - 5.6 * ecology, 784, 5.6 * ecology - 2, 72)
-            ctx.fillStyle = '#27577A'
-            ctx.fillRect(120, 904, 5.6 * conservative - 2, 72)
-            ctx.fillStyle = '#C4A717'
-            ctx.fillRect(682 - 5.6 * progressive, 904, 5.6 * progressive - 2, 72)
-            ctx.fillStyle = '#222222'
-            ctx.font = '700 80px Montserrat'
-            ctx.textAlign = 'left'
-            ctx.fillText('LeftValues', 20, 90)
-            ctx.font = '50px Montserrat'
-            ctx.fillText(getIdeologyNameByIndex(closestMatch.name), 20, 140)
-
-            ctx.fillStyle = '#dddddd'
-            ctx.textAlign = 'left'
-            if (revolution > 30) {
-                ctx.fillText(revolution + '%', 130, 237.5)
-            }
-            if (scientific > 30) {
-                ctx.fillText(scientific + '%', 130, 357.5)
-            }
-            if (central > 30) {
-                ctx.fillText(central + '%', 130, 477.5)
-            }
-            if (international > 30) {
-                ctx.fillText(international + '%', 130, 597.5)
-            }
-            if (party > 30) {
-                ctx.fillText(party + '%', 130, 717.5)
-            }
-            if (industry > 30) {
-                ctx.fillText(industry + '%', 130, 837.5)
-            }
-            if (conservative > 30) {
-                ctx.fillText(conservative + '%', 130, 957.5)
-            }
-            ctx.textAlign = 'right'
-            if (reform > 30) {
-                ctx.fillText(reform + '%', 670, 237.5)
-            }
-            if (utopian > 30) {
-                ctx.fillText(utopian + '%', 670, 357.5)
-            }
-            if (decentral > 30) {
-                ctx.fillText(decentral + '%', 670, 477.5)
-            }
-            if (national > 30) {
-                ctx.fillText(national + '%', 670, 597.5)
-            }
-            if (union > 30) {
-                ctx.fillText(union + '%', 670, 717.5)
-            }
-            if (ecology > 30) {
-                ctx.fillText(ecology + '%', 670, 837.5)
-            }
-            if (progressive > 30) {
-                ctx.fillText(progressive + '%', 670, 957.5)
-            }
-
-            ctx.fillStyle = '#222222'
-            ctx.font = '300 30px Montserrat'
-            ctx.fillText('leftvalues.github.io', 780, 60)
-            ctx.textAlign = 'center'
-            ctx.fillText('' + document.getElementById('a-label').innerHTML, 400, 175)
-            ctx.fillText('' + document.getElementById('b-label').innerHTML, 400, 295)
-            ctx.fillText('' + document.getElementById('c-label').innerHTML, 400, 415)
-            ctx.fillText('' + document.getElementById('d-label').innerHTML, 400, 535)
-            ctx.fillText('' + document.getElementById('e-label').innerHTML, 400, 655)
-            ctx.fillText('' + document.getElementById('f-label').innerHTML, 400, 775)
-            ctx.fillText('' + document.getElementById('g-label').innerHTML, 400, 895)
+            index++
+        }
+        
+        ideologyIndexAndDistance.sort(function (a, b) {
+            return a.distance - b.distance
         })
-    </script>
+        
+        const distances = ideologyIndexAndDistance.map(function (indexAndDistance) {
+            return indexAndDistance.distance
+        })
+    
+        const closestDistance = distances[0]
+        const farthestDistance = distances[distances.length - 1]
+        const distanceSpan = farthestDistance - closestDistance
+    
+        closestMatch = ideologyIndexAndDistance[0]
+        const closestMatchIdeologyname = getIdeologyNameByIndex(closestMatch.name)
+        document.getElementById('ideology-label').innerHTML = closestMatchIdeologyname
+        const current_url = location.href;
+        const current_url_encoded = encodeURIComponent(current_url);
+        const tweetTextBefore = tweetText('before');
+        const tweetTextAfter = tweetText('after');
+        const tweetTextResult = tweetText('result');
+        const concatenated_str = tweetTextBefore + closestMatchIdeologyname + tweetTextAfter;
+        const con_encoded = encodeURIComponent(concatenated_str);    
+        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=femscale\">Tweet Result!</a>';
+        document.getElementById('ideodesc-label').innerHTML = getIdeologyDescriptionByIndex(closestMatch.name);
+    
+    
+        
+        const nextMatches = document.getElementById('next-matches')
+        nextMatches.innerHTML = ideologyIndexAndDistance.slice(1).map(function (indexAndDistance) {
+            const name = indexAndDistance.name
+            ideology = getIdeologyNameByIndex(name)
+            ideodesc = getIdeologyDescriptionByIndex(name)
+            const relativeDistance = 1 - (indexAndDistance.distance - closestDistance) / distanceSpan;
+            const relativeDistancePercent = Math.round(relativeDistance * 1000) / 10;
+            return '<li>' + ideology + ': ' + relativeDistancePercent + '%</li>'
+        }).join('\n')
+
+
+    var month = new Array();
+    month= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct", "Nov", "Dec"];
+    let today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = month[today.getMonth()]; 
+    const yy = (today.getFullYear() - 2000);
+    today = mm + ' ' + dd + ', ' + '\''+yy;
+
+　　　
+    Chart.defaults.font.size = 16;
+    Chart.defaults.font.family = "'Noto Sans', 'Atkinson Hyperlegible', sans-serif";
+    Chart.register({
+        id: 'custom_canvas_background_color',
+        beforeDraw: (chart) => {
+            let ctx = chart.canvas.getContext('2d');
+            ctx.save();
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.fillStyle = '#eee';
+            ctx.fillRect(0, 0, chart.width, chart.height);
+            ctx.restore();
+        }
+    });
+        
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx,{
+        type: 'radar',
+        data: {
+            labels: [['Con: '+ Math.round(conservative)], ['LF: '+ Math.round(liberal)], ['RF: '+ Math.round(radical)], ['SF: '+ Math.round(socialist)], ['CF: '+ Math.round(cultural)], ['Wo: '+ Math.round(womanism)],['FS: '+ Math.round(femscore)]],
+            datasets: [{
+                label: 'Your Score',
+                data: [conservative, liberal, radical, socialist, cultural, womanism, femscore],
+                fill: true,
+                backgroundColor: 'rgba(187, 0, 156, 0.4)',
+                borderColor: 'rgb(187, 0, 156)',
+                pointBackgroundColor: 'rgb(187, 0, 156)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(187, 0, 156)'
+            }, {
+                label: 'avg.',
+                data: [conservative_henley1998, liberal_henley1998, radical_henley1998, socialist_henley1998, cultural_henley1998, womanism_henley1998, femscore_henley1998],
+                fill: false,
+                borderColor: 'rgb(126, 126, 126)',
+                pointBackgroundColor: 'rgb(0, 000, 0)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(126, 126, 126)'
+            }]
+        },
+        options: {
+            aspectRatio:0.7,
+            layout: {
+                padding: 8,
+            },
+            responsive: true,
+            maintainAspectRatio:true,
+            scales: {
+                r: {
+                    min: 0,
+                    max: 100,
+                    pointLabels:{
+                        font:{size: 12, weight: 'bold'}
+                    },
+                    ticks: { 
+                        stepSize: 20,
+                        backdropColor: '#eee'
+                    }
+                }
+            },
+            plugins: {
+                legend:{
+                    labels: {
+                        font: {size: 16}
+                    }
+                },
+                tooltip:{
+                    mode: 'index',
+                    intersect: false,
+/*                     callbacks:{
+                        title: function(tooltipItem, data) {
+                            return tooltipItem.xLabel;
+                        },
+                        label: function(tooltipItem, data){
+                            return data.datasets[tooltipItem.datasetIndex].label + ': ' + tooltipItem.yLabel;
+                        },
+                    }*/
+                },
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                title: {
+                    display: true,
+                    text: [tweetTextResult + closestMatchIdeologyname + '!', "femscale.github.io"+ ' (' + today + ')'],
+                    font:{size: 25},
+                },
+                subtitle: {
+                    display: true,
+                    position: 'bottom',
+                    font:{size: 14},
+                    text: ['Con: ' + getIdeologyNameByIndex("conservative") + ', LF: ' + getIdeologyNameByIndex("liberal-feminist") + ', RF: '+  getIdeologyNameByIndex("radical-feminist")+',', 'SF: '+getIdeologyNameByIndex("socialist-feminist") + ', CF: '+ getIdeologyNameByIndex("cultural-feminist") + ', Wo: '+  getIdeologyNameByIndex("womanism")+',', 'FS: FemScore. avg. based on Henley et al. (1998).'],
+                }
+            } //plugins
+        } //options
+    }); //myChart
+
+        function copyResultURL(){
+            const inputTarget = document.getElementById('copyTarget');
+            inputTarget.value = current_url;  
+        }
+        copyResultURL()
+        
+
+    }) // end loadtranslation
+    
+    document.getElementById("btnDownload").addEventListener('click', function(){  
+        var base64_url = document.getElementById("myChart").toDataURL("image/png");    
+        this.href = base64_url;
+    });
+
+        function copyToClipboard() {
+            var copyTarget = document.getElementById("copyTarget");
+            copyTarget.select();
+            document.execCommand("Copy");
+            alert("Copied result URL!");
+        }
+</script>    
 </body>
 
 </html>

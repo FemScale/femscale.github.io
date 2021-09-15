@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html>
-
+	
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700%7CRoboto:400,700" rel="stylesheet">
-    <link href='style.css' rel='stylesheet' type='text/css'>
-    <title>LeftValues Quiz</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="shortcut icon" type="image/png" href="icon.png">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex">
+    
+    <title>Quiz - Feminist Perspective Scale Online</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href='reset.css' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="favicon/icon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/icon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/icon-192x192.png">
+    <link rel="apple-touch-icon" type="image/png" href="favicon/apple-touch-icon-180x180.png">
 </head>
+
 
 <body>
     <script type="application/javascript" src="questions.js">
     </script>
-    <h1>LeftValues</h1>
-    <select id="langPicker"></select>
+     <h1 class="top">FemScale</h1>					 
     <hr>
+	
     <h2 data-i18n="quiz_loading" style="text-align:center;" id="question-number">Loading...</h2>
-    <p class="question" id="question-text"></p>
-    <button data-i18n="quiz_strongly_agree" class="button" onclick="nextQuestion( 1.0)"
-        style="background-color: #1b5e20;">Strongly Agree</button> <br>
-    <button data-i18n="quiz_agree" class="button" onclick="nextQuestion( 0.5)"
-        style="background-color: #4caf50;">Agree</button> <br>
-    <button data-i18n="quiz_neutral" class="button" onclick="nextQuestion( 0.0)"
-        style="background-color: #bbbbbb;">Neutral/Unsure</button> <br>
-    <button data-i18n="quiz_disagree" class="button" onclick="nextQuestion(-0.5)"
-        style="background-color: #f44336;">Disagree</button> <br>
-    <button data-i18n="quiz_strongly_disagree" class="button" onclick="nextQuestion(-1.0)"
-        style="background-color: #b71c1c;">Strongly Disagree</button> <br>
+    <div class="question_wrapper">
+        <p class="question" id="question-text">Loading...</p>
+    </div>
+    <button data-i18n="quiz_strongly_agree" class="button stronglyAgree" onclick="nextQuestion(7.0)">Strongly Agree</button> <br>																						  
+    <button data-i18n="quiz_agree" class="button agree" onclick="nextQuestion(5.5)">Agree</button> <br>																						 
+    <button data-i18n="quiz_neutral" class="button neutral" onclick="nextQuestion(4.0)">Neutral/Unsure</button> <br>																										  
+    <button data-i18n="quiz_disagree" class="button disagree" onclick="nextQuestion(2.5)">Disagree</button> <br>																								 
+    <button data-i18n="quiz_strongly_disagree" class="button stronglyDisagree" onclick="nextQuestion(1.0)">Strongly Disagree</button> <br>																											   
     <button data-i18n="quiz_back" class="small_button" onclick="prevQuestion()" id="back_button">Back</button>
     <button data-i18n="quiz_back" class="small_button_off" id="back_button_off">Back</button>
-    <br>
+	<br>
 
-    <!-- Privacy respecting Statcounter code for LeftValues http://leftvalues.github.io -->
-    <script type="text/javascript">
-        var sc_project = 12079783;
-        var sc_invisible = 1;
-        var sc_security = "f3285a9d";
-        var sc_https = 1;
-        if (navigator.doNotTrack != 1) {
-            var statcounterscript = document.createElement('script');
-            statcounterscript.setAttribute("type", "text/javascript");
-            statcounterscript.setAttribute("src", "https://www.statcounter.com/counter/counter.js");
-            document.getElementsByTagName("body")[0].appendChild(statcounterscript);
-        }
-    </script>
-    <!-- End of Statcounter Code -->
-
-    <!-- JavaScript for the test itself -->
+    <!-- JavaScript for the test itself -->		  							 
     <script type="application/javascript" src="i18n.js"></script>
-    <script>
-        /* global i18n, loadTranslation, questions */
-        let maxA, maxB, maxC, maxD, maxE, maxF, maxG // Max possible scores
-        maxA = maxB = maxC = maxD = maxE = maxF = maxG = 0
-        let a, b, c, d, e, f, g // User's scores
-        a = b = c = d = e = f = g = 0
+    <script>													 
+       let maxA, maxB, maxC, maxD, maxE, maxF // Max possible scores
+        maxA = maxB = maxC = maxD = maxE = maxF = 0        
+        let a, b, c, d, e, f // User's scores
+        a = b = c = d = e = f =  0
         let qn = [] // Array of question numbers
         let qi = 0 // Question index
         populateQn()
         let prevAnswer = null
-
         function initQuestion () {
         document.getElementById('question-text').innerHTML = i18n.getString(`question_${qn[qi]}`)
         document.getElementById('question-number').innerHTML = i18n.getString('quiz_question_of', {
@@ -74,15 +66,14 @@
             document.getElementById('back_button_off').style.display = 'none'
         }
         }
-
         function nextQuestion (mult) { // eslint-disable-line no-unused-vars
-        a += mult * questions[`question_${qn[qi]}`].a
+        a += mult * questions[`question_${qn[qi]}`].a 
         b += mult * questions[`question_${qn[qi]}`].b
         c += mult * questions[`question_${qn[qi]}`].c
         d += mult * questions[`question_${qn[qi]}`].d
         e += mult * questions[`question_${qn[qi]}`].e
         f += mult * questions[`question_${qn[qi]}`].f
-        g += mult * questions[`question_${qn[qi]}`].g
+													 
         qi++
         prevAnswer = mult
         if (qn[qi] < Object.size(questions)) {
@@ -91,7 +82,6 @@
             results()
         }
         }
-
         function prevQuestion () { // eslint-disable-line no-unused-vars
         if (prevAnswer == null) {
             return
@@ -103,13 +93,13 @@
         d -= prevAnswer * questions[`question_${qn[qi]}`].d
         e -= prevAnswer * questions[`question_${qn[qi]}`].e
         f -= prevAnswer * questions[`question_${qn[qi]}`].f
-        g -= prevAnswer * questions[`question_${qn[qi]}`].g
-        prevAnswer = null
+																						
+         prevAnswer = null
         initQuestion()
         }
-
+        
         function calcScore (score, max) {
-        return (100 * (max + score) / (2 * max)).toFixed(1)
+        return (100 * (score - 10) / max).toFixed(2)
         }
 
         function populateQn() {
@@ -130,27 +120,27 @@
 
         function results () {
         window.location.href = 'results.html' +
-                        `?a=${calcScore(a, maxA)}` +
-                        `&b=${calcScore(b, maxB)}` +
-                        `&c=${calcScore(c, maxC)}` +
-                        `&d=${calcScore(d, maxD)}` +
-                        `&e=${calcScore(e, maxE)}` +
-                        `&f=${calcScore(f, maxF)}` +
-                        `&g=${calcScore(g, maxG)}`
+                        `?a=${calcScore(a, 60)}` +
+                        `&b=${calcScore(b, 60)}` +
+                        `&c=${calcScore(c, 60)}` +
+                        `&d=${calcScore(d, 60)}` +
+                        `&e=${calcScore(e, 60)}` +
+                        `&f=${calcScore(f, 60)}`
+												  
         }
         loadTranslation().then(() => {
         initQuestion()
         for (let i = 0; i < Object.size(questions); i++) {
-            maxA += Math.abs(questions[`question_${i}`].a)
-            maxB += Math.abs(questions[`question_${i}`].b)
-            maxC += Math.abs(questions[`question_${i}`].c)
-            maxD += Math.abs(questions[`question_${i}`].d)
-            maxE += Math.abs(questions[`question_${i}`].e)
-            maxF += Math.abs(questions[`question_${i}`].f)
-            maxG += Math.abs(questions[`question_${i}`].g)
+            maxA += Math.abs(6 * questions[`question_${i}`].a)
+            maxB += Math.abs(6 * questions[`question_${i}`].b)
+            maxC += Math.abs(6 * questions[`question_${i}`].c)
+            maxD += Math.abs(6 * questions[`question_${i}`].d)
+            maxE += Math.abs(6 * questions[`question_${i}`].e)
+            maxF += Math.abs(6 * questions[`question_${i}`].f)
+														  
         }
         })
     </script>
 </body>
 
-</html>
+</html>	   

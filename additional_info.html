@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Additional Info - FemScale</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href='reset.css' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="favicon/icon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/icon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/icon-192x192.png">
+    <link rel="apple-touch-icon" type="image/png" href="favicon/apple-touch-icon-180x180.png">
+</head>
+
+<body>
+    
+<h1 class="top">FemScale</h1>
+    <select id="langPicker"></select>
+<hr>
+<h1 data-i18n="info_h1">Additional Info</h1>
+<div class="info_wrapper">
+    <div class="text-wrapper">
+        <h2 data-i18n="info_h2_femscore">What's "FemScore"?</h2>
+        <p data-i18n="info_p_femscore">"FemScore" is the average of all subscales other than "Conservative". Basically,the higher the Femscore, the more of a feminist you are.</p>
+    </div>
+    <div class="text-wrapper">
+        <h2 data-i18n="info_h2_match">What's the "Closest Match" in the Results?</h2>
+        <p data-i18n="info_p_match">Much like 8values and LeftValues, FemScale calculates how well your views match with some feminist views, and returns the closest to you. Just like LeftValues, it also tells you how close you are to the other perspectives, with your closest match as 100% and farthest as 0%. Unlike LeftValues, however, FemScale normalises your scores before measuring the Matches</p>
+    </div>
+    <div class="text-wrapper">
+        <h2 data-i18n="info_h2_changes">What changes have you made from the original FPS-2?</h2>
+        <p data-i18n="info_p_changes">One alteration we made is the way we calculate the scores. In the original FPS-2, participants were asked to choose from a 7-point scale, and were given a score from 10 to 70 for each of the six perspectives, and 50 to 350 for FemScore; FemScale asks participants to choose from a 5-point scale and returns a recalculated score with the minimum of 0 and maximum of 100 for both the six perspectives and FemScore. FemScale scores can easily be converted to FPS-2 scores by simply multiplying them by 0.60 and adding 10 (for the Perspectives) or by multiplying them by 3.0 and adding 50 (for FemScore). This was a deliberate choice, to both maintain its reliability and to make a comparison with results published in Henley 1998, as well as other researches that use FPS-2, possible. We may, however, update some questions in the future, partially to reflect some contemporary feminist views and theories. We have also omitted the FemBehave score, due to its very low reliability.</p>
+    </div>
+    <div class="text-wrapper">
+        <h2 data-i18n="info_h2_credits">Credits</h2>
+        <p data-i18n="info_p_credits_1">Codes for FemScale is based on <a href='https://leftvalues.github.io/'>LeftValues</a>, which in turn is based on <a href='https://8values.github.io/'>8values</a>. Also, parts of codes are copied from <a href='https://8values-ja.github.io/'>8values-ja</a>. LeftValues, 8values, and 8values-ja are all distributed under the MIT License.</p><br/><br/>
+        <p data-i18n="notice_important">The Feminist Perspective Scale is copyrighted by Henley (1989, 1997). <b>We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the copyright holder</b>. We use this Scale solely to educate those who are interested in feminism and its values.</p>
+        <p data-i18n="info_p_credits_2">Questions used in FemScale are based on The Feminist Perspective Scale (FORM 2 or FPS-2) published in the following article:
+            <span class='reference'>Henley, N. M., Meng, K., Brien, D. O., McCarthy, W. J., Sockloskie, R. J. (1998). Developing a scale to measure the diversity of feminist attitudes. Psychology of Women Quarterly, 22, 317–348. <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>https://doi.org/10.1111/j.1471-6402.1998.tb00158.x</a></span></p><br/><br/>
+        <p data-i18n="info_p_credits_3">Image file "womensmarch_voa.jpg" is originally by B. Allen for Voice of America (VOA). All text, audio and video material produced exclusively by the Voice of America is in the public domain. The image was cropped by femscale. Original image was retrieved on September 12, 2021 from:
+            <span class='reference'>Ball, Anne. (2017, Jan 22). Hundreds of thousands attend Women's March on Washington. VOA. <a href='https://learningenglish.voanews.com/a/hundreds-of-thousands-attend-womens-march-on-washington/3686717.html'>https://learningenglish.voanews.com/a/hundreds-of-thousands-attend-womens-march-on-washington/3686717.html</a></span></p>
+    </div>
+    <div class="text-wrapper">
+        <h2 data-i18n="info_h2_license">License</h2>
+        <p data-i18n="info_p_license">For all files located in directory “lang”, all strings corresponding to “question_0” to “question_59” are copyrighted by Henley (1989, 1997). All codes <b>EXCEPT FOR ALL STRINGS CORRESPONDING TO "question_0" TO "question_59" IN ANY OF THE FILES LOCATED UNDER DIRECTORY "lang"</b> are under the MIT License. For the full & official license, see <a href='LICENSE'>LICENSE</a>.<p>
+    </div>
+</div> 
+        <HR>
+<section>	
+<button data-i18n="info_home" class="start" onclick="location.href='index.html';">Home</button><br>
+</section>
+    <!-- This is the script for the page itself -->
+    <script type="application/javascript" src="i18n.js"></script>
+    <script type="text/javascript">
+        loadTranslation()
+    </script>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+// SECTIONS MODIFIED FROM LV ARE COMMENTED (yymmdd.hhmm)
+
 // LANGUAGE SETTINGS
 function getCookie (name) {
   const value = '; ' + document.cookie
@@ -20,22 +22,15 @@ setBodyClassUserLang(userLang)
 
 const langPicker = document.getElementById('langPicker')
 
+//MODIFIED FROM LV (210820.1412)
 var REPLACEMENTS = {
   colors: {
-    rev: '#890000',
-    sci: '#88232B',
-    cent: '#560000',
-    int: '#782F52',
-    party: '#963B33',
-    prod: '#804E00',
-    cons: '#27577A',
-    ref: '#FC5959',
-    uto: '#7F0037',
-    dec: '#000000',
-    nat: '#7F3300',
-    syn: '#7F333B',
-    eco: '#586808',
-    prog: '#C4A717'
+    con: '#890000', //conservative
+    lf: '#88232B', //liberal f
+    rf: '#560000', //radical f
+    sf: '#782F52', //socialist f
+    cu: '#963B33', //cultural
+    wc: '#804E00' //women of color
   }
 }
 
@@ -116,21 +111,11 @@ const getl10n = async (code) => {
     .catch(err => { throw err })
 }
 
+// MODIFIED FROM LV (210820.1413)
 async function loadTranslation () { // eslint-disable-line no-unused-vars
   return Promise.all([
     getl10n('en'),
-    getl10n('es'),
-    getl10n('de'),
-    getl10n('cn'),
-    getl10n('ko'),
-    getl10n('pt'),
-    getl10n('ru'),
-    getl10n('sh'),
-    getl10n('pl'),
-    getl10n('fr'),
-    getl10n('ja'),
-    getl10n('cs'),
-    getl10n('it')
+    getl10n('ja')
   ]).then(() => {
     console.log(i18n)
 
