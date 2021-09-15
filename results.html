@@ -49,7 +49,7 @@
             <p style="font-style: italic" data-i18n="coming_soon">Short desriptions for each perspectives coming soon!</p>
             <p id="ideodesc-label"></p>
             <div class="twitter-share">
-                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=femscale" class="twitter-share-button">Tweet!</a></p>
+                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=FemScale" class="twitter-share-button">Tweet!</a></p>
             </div>
         </div>
     </div>
@@ -187,7 +187,7 @@
         const tweetTextResult = tweetText('result');
         const concatenated_str = tweetTextBefore + closestMatchIdeologyname + tweetTextAfter;
         const con_encoded = encodeURIComponent(concatenated_str);    
-        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=femscale\">Tweet Result!</a>';
+        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=FemScale\">Tweet Result!</a>';
         document.getElementById('ideodesc-label').innerHTML = getIdeologyDescriptionByIndex(closestMatch.name);
     
     
