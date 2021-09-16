@@ -85,7 +85,7 @@
     "result_p_otherquiz": "Want to know more about your political perspectives and values? Have a go at <a href='https://leftvalues.github.io/'>LeftValues</a> if you are left-leaning, or <a href='https://rightvaluestest.github.io'>RightValues</a> if you are leaning towards the right! Also, don't forget to check out the original <a href='https://8values.github.io/'>8values</a>!",
     "result_back": "Restart",
     "coming_soon": "Short desriptions for each perspectives coming soon!",
-    "index_b_start": "Click here to start!",
+    "index_b_start": "Start!",
     "index_h2_whatis": "What is FemScale?",
     "index_p_whatis": "<a href='https://femscale.github.io/'>FemScale</a> is an online quiz designed to measure and analyse your attitudes towards women. This project aims to educate those who are interested in feminism. FemScale is based on an influential paper by <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>Henley et al. (1998)</a>, with inspiration from <a href='https://8values.github.io/'>8values</a>, <a href='https://leftvalues.github.io/'>LeftValues</a> and <a href='https://rightvaluestest.github.io'>RightValues</a>. You will be presented with a statement, and then you will answer how much you agree with it. Questions will be presented in random order. Answer honestly! There are <b><u><span id='numOfQuestions'></span></u></b> questions (it will take you around 10 minutes to answer them all). <b>We do not collect your data!</b>",
     "index_h2_perspectives": "The six perspectives",
