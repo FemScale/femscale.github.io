@@ -29,11 +29,13 @@
 
 <h1 data-i18n="result_h1">Results</h1>
 <div class="result_wrapper">
-    <div class="text-wrapper">
+    <div class="section-wrapper">
         <h2 data-i18n="result_h2_match">Closest Match:<span class="weight-300" id="ideology-label"></span></h2>
-        <p data-i18n="result_p">You can send these results by copying and pasting the URL at the top of the page or using the download link below.</p>
-        <input id="copyTarget" type="text" value="https://femscale.github.io" readonly>
-        <button onclick="copyToClipboard()">Copy URL</button>
+        <div class="text-wrapper">
+            <p data-i18n="result_p">You can send these results by copying and pasting the URL at the top of the page or using the download link below.</p>
+            <input id="copyTarget" type="text" value="https://femscale.github.io" readonly>
+            <button onclick="copyToClipboard()">Copy URL</button>
+        </div>
     </div>
 </div>
 <div class="result_wrapper">
@@ -49,38 +51,46 @@
             <p style="font-style: italic" data-i18n="coming_soon">Short desriptions for each perspectives coming soon!</p>
             <p id="ideodesc-label"></p>
             <div class="twitter-share">
-                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=FemScale" class="twitter-share-button">Tweet!</a></p>
+                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=femscale" class="twitter-share-button">Tweet!</a></p>
             </div>
         </div>
     </div>
 </div>    
 
 <div class="result_wrapper">
-    <div class="text-wrapper">
+    <div class="section-wrapper">    
         <h2 data-i18n="result_h2_next_matches">Next closest matches</h2>
+        <div class="text-wrapper">
             <p data-i18n="result_p_next_matches">With your closest match as 100% and farthest as 0%, here is how closely you matched the other ideologies. Want to know more? Check out our <a href='additional_info.html'>Additional Info</a> page!</p>
             <p><ol id="next-matches"></ol></p>
+        </div>    
     </div>
 </div>
 <div class="result_wrapper">
-    <div class="text-wrapper">
+    <div class="section-wrapper">
         <h2 data-i18n="result_h2_issues">I don't like my scores!</h2>
+        <div class="text-wrapper">
             <p data-i18n="result_p_issues">Please remember that you are not intended to get a 100% score in any of the categories. The point of the quiz is to challenge your views and understand the various perspectives feminism offer. If you have any suggestions or constructive criticism, please open an issue on the <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>.</p>
+        </div>
     </div>
 </div>
 <div class="result_wrapper">
-    <div class="text-wrapper">
+    <div class="section-wrapper">
         <h2 data-i18n="result_h2_feedback">Feedback</h2>
+        <div class="text-wrapper">
             <p data-i18n="result_p_feedback">FemScale respects your privacy. However, we still want a way to get your feedback. If you can help us, please fill out <a href='https://forms.gle/VfKqtp6vNMKBMoRm8'>this form</a> (English and Japanese available)! <b>We will ask you to paste the Results URL (or type in the Results by hand).</b> Also, please help us improve the quiz at our <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>!</p>
+        </div>
     </div>
 </div>
 <div class="result_wrapper">
-    <div class="text-wrapper">
+    <div class="section-wrapper">
         <h2 data-i18n="index_h2_notice">Notice</h2>
+        <div class="text-wrapper">
         <p data-i18n="notice_important">All questions are copyrighted by Henley (1989, 1997). <b>We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the copyright holder</b>. We use this Scale solely to educate those who are interested in feminism and its values.</p>
         <p data-i18n="notice_before">The following notice is by Henley, the original creator of FPS-2:</p>
         <p data-i18n="notice_quote" class="quote">
         "The Feminist Perspectives Scale, Copyright 1989, 1997 by Nancy M. Henley. Permission is given for its use, or use of any part of it, without charge, for research and educational purposes only. This scale is expressly not to be used for personnel screening (business, military, academic, or any other type). Anyone with knowledge of its use for such screening is urged to contact N. M. Henley, Psychology Department, UCLA, Los Angeles, CA 90024-1563, giving date, user, and any other pertinent information known. This notice must appear on all copies of the scale reproduced."</p>
+        </div>
     </div>
 </div>
 <HR>
@@ -187,7 +197,7 @@
         const tweetTextResult = tweetText('result');
         const concatenated_str = tweetTextBefore + closestMatchIdeologyname + tweetTextAfter;
         const con_encoded = encodeURIComponent(concatenated_str);    
-        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=FemScale\">Tweet Result!</a>';
+        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=femscale\">Tweet Result!</a>';
         document.getElementById('ideodesc-label').innerHTML = getIdeologyDescriptionByIndex(closestMatch.name);
     
     
