@@ -77,7 +77,7 @@
     "result_download": "Download Result Image",
     "result_p_ref": "Values for mean subscale scores (\"avg.\") are cited from Table 4, Column \"Nonstudent sample\" published in the following:",
     "result_h2_match": "Closest Match:",
-    "result_h2_next_matches": "Next closest matches",
+    "result_h2_next_matches": "Other perspectives",
     "result_p_next_matches": "Please remember that you are not intended to get a 100% score in any of the categories. The point of the quiz is to challenge your views and give you a glimpse of the various perspectives feminism offer. If you have any suggestions or constructive criticism, please open an issue on the <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a> or fill out <a href='https://forms.gle/VfKqtp6vNMKBMoRm8'>this form</a> (English and Japanese available).",
     "result_h2_feedback": "Feedback",
     "result_p_feedback": "FemScale respects your privacy. However, we still want a way to get your feedback. If you can help us, please fill out <a href='https://forms.gle/VfKqtp6vNMKBMoRm8'>this form</a> (English and Japanese available)! <b>We will ask you to copy and paste the Results URL (or type in the Results by hand).</b> Also, please help us improve the quiz at our <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>!",
