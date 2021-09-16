@@ -201,7 +201,7 @@
         const tweetTextResult = tweetText('result');
         const concatenated_str = tweetTextBefore + closestMatchIdeologyname + tweetTextAfter;
         const con_encoded = encodeURIComponent(concatenated_str);    
-        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=femscale\">Tweet!</a>';
+        document.getElementById('twitter-share-button').innerHTML = '<a href=\"https://twitter.com/share?url=' + current_url_encoded + '&text=' + con_encoded + '&hashtags=FemScale\">Tweet!</a>';
         document.getElementById('ideodesc-label').innerHTML = getIdeologyDescriptionByIndex(closestMatch.name);
     
     
