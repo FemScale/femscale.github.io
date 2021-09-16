@@ -22,8 +22,11 @@ dt, dd, p {
     line-height: 1.5;
     color: #444;
 }
-ul, ol, li {
-    list-style-type: none
+ul {
+    list-style-type: square;
+}
+ol{
+    list-style-type: none;
 }
 ol li, dd {
     margin-bottom: 12pt;
@@ -75,19 +78,14 @@ h2 {
 h2.center {        
     margin-top: 0.5em;
     margin-bottom: 0.5em;                   
-  text-align: center;
+    text-align: center;
 }
 h3 {
-    font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-h3.ideology{
     font-size: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
     text-align: left;
-    font-weight: bold;
 }
+
 @media screen and (min-width: 800px) {
     body {
         padding-left: 1em;
@@ -125,9 +123,6 @@ h3.ideology{
         font-size: 1.8em;
         margin-bottom: 0.5em;
         text-align: left;
-    }
-    h3.ideology{
-        font-size: 1.5em;
     }
 }
 a {
@@ -234,12 +229,14 @@ img.center {
     justify-content: center;
     padding-bottom: 1em;
 }
-.index_wrapper, .result_wrapper, .info_wrapper {
+.index_wrapper, .result_wrapper, .info_wrapper, .pers_wrapper {
     width: 100%;
     max-width: 40em;
+    margin: auto;
+}
+.index_wrapper, .result_wrapper, .info_wrapper {
     padding-left:0.5em;
     padding-right:0.5em;
-    margin: auto;
 }
 .section-wrapper {
     width:100%;
@@ -247,11 +244,16 @@ img.center {
     padding-left: auto;
     padding-right:auto;
 }
+.desc_wrapper {
+    width:100%;
+    padding-top:0.25em;
+    padding-bottom: 0.5em
+}
 .text-wrapper {
     width: 100%;
     display: inline-block;
     align-items: center;
-    padding: 0.5em;                   
+    padding: 0.25em 0.5em;
 }
 .image-wrapper {
     width: 100%;
@@ -272,22 +274,19 @@ img.center {
     }
 }
 @media screen and (min-width: 1200px) {
-    .index_wrapper {
+    .index_wrapper, .result_wrapper, .pers_wrapper {
         max-width:85em;
         display: flex;
-        align-items: start;
         justify-content: center;
+        align-items: start;
     }
     .result_wrapper {
-        max-width:85em;
-        display: flex;
         align-items: center;
-        justify-content: center;
     }    
     .section-wrapper {
         display: block;
         padding-top: 1.5em;
-    }                                       
+    }
 }
 span.weight-300 {
     font-weight: 300;

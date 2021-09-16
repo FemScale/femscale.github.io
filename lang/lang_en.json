@@ -82,7 +82,7 @@
     "result_h2_feedback": "Feedback",
     "result_p_feedback": "FemScale respects your privacy. However, we still want a way to get your feedback. If you can help us, please fill out <a href='https://forms.gle/VfKqtp6vNMKBMoRm8'>this form</a> (English and Japanese available)! <b>We will ask you to copy and paste the Results URL (or type in the Results by hand).</b> Also, please help us improve the quiz at our <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>!",
     "result_h2_otherquiz": "Other political quizzes",
-    "result_p_otherquiz": "Want to know more about your political views and values? Check out <a href='https://leftvalues.github.io/'>LeftValues</a> if you are left-leaning, and <a href='https://rightvaluestest.github.io'>RightValues</a> if you are right-leaning. Also, don't forget to check out the original <a href='https://8values.github.io/'>8values</a>!",
+    "result_p_otherquiz": "In FemScale, as well as FPS-2, your answers are analysed using the following six perspectives as sub-scales: Conservativism; Liberal, Radical, Socialist, and Cultural Feminism; and Womanism. ",
     "result_back": "Restart",
     "coming_soon": "Short desriptions for each perspectives coming soon!",
     "index_b_start": "Click here to start!",
@@ -134,5 +134,8 @@
     "ideology_womanism_desc": "Womanists emphasize the importance of a women's movement that acknowledges and includes women of color, who were often overlooked or excluded from (earlier) feminist movements. They tend to recognize racism and poverty as concerns equally as important as sexism. The term \"Womanism\" was coined by Alice Walker, who famously said: \"Womanist is to feminist as purple is to lavender\".<ul><li><a href='https://en.wikipedia.org/wiki/Womanism'>Womanism - Wikipedia</a></li></ul>",
     "tweet_text_before": "I am a",
     "tweet_text_result": "You are a",
-    "tweet_text_after": "! What about you?"
+    "tweet_text_after": "! What about you?",
+    "info_h2_perspectives": "More information on the perspectives",
+    "info_p_perspectives1": "FemScale, as well as FPS-2, analyses your attitudes towards women using the following six perspectives as sub-scales: <b>Conservativism</b>; <b>Liberal</b>, <b>Radical</b>, <b>Socialist</b>, and <b>Cultural Feminism</b>; and <b>Womanism</b>. Marxist Feminism was not included by Henley et al. (1998) since they believed that it was not influential enough in the U.S. Here is a list of all the perspectives and a brief discription of each:",
+    "info_p_perspectives_limitations": "We would like to emphasize the fact that this test fails to reflect some important contemporary feminist values and concerns. We also acknowledge that some of the questions are problematic and even offensive. We are planning to update both the questions and the perspectives to address these issues. The creators of FemScale advocate for a feminist movement that is \"for everybody\"."
 }

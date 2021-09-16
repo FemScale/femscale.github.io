@@ -87,9 +87,9 @@
     "coming_soon": "各分派について、短い説明文を追加予定です。",
     "index_b_start": "クリックしてはじめる",
     "index_h2_whatis": "FemScaleとは?",
-    "index_p_whatis": "<a href='https://femscale.github.io/'>FemScale</a>とは、女性に関する問題にへのあなたの価値観を測り、分析するオンライン診断です。このプロジェクトは、フェミニズムに興味のある人に勉強の手立てとして活用していただくことを目的として、作成されています。FemScaleは <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>Henley et al. (1998)</a>による論文に基づき、<a href='https://8values.github.io/'>8values</a>（<a href='https://8values-ja.github.io/'>日本語版</a>）、<a href='https://leftvalues.github.io/'>LeftValues</a>や<a href='https://rightvaluestest.github.io'>RightValues</a>に着想を得て、つくられました。 この診断では、ランダムな順に表示される各文に対して、どの程度同意するかを選択形式で答えていただきます。正直にお答えください！ Answer honestly! 質問は、全 <b><u><span id='numOfQuestions'></span></u></b>問で、通常10分程度で終わります。<b>あなたの回答は一切追跡しません！</b>",
+    "index_p_whatis": "<a href='https://femscale.github.io/'>FemScale</a>とは、女性に関する問題へのあなたの価値観を測り、分析するオンライン診断です。このプロジェクトは、フェミニズムに興味のある人に勉強の手立てとして活用していただくことを目的として、作成されています。FemScaleは <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>Henley et al. (1998)</a>による論文に基づき、<a href='https://8values.github.io/'>8values</a>（<a href='https://8values-ja.github.io/'>日本語版</a>）、<a href='https://leftvalues.github.io/'>LeftValues</a>や<a href='https://rightvaluestest.github.io'>RightValues</a>に着想を得て、つくられました。 この診断では、ランダムな順に表示される各文に対して、どの程度同意するかを選択形式で答えていただきます。正直にお答えください！ Answer honestly! 質問は、全 <b><u><span id='numOfQuestions'></span></u></b>問で、通常10分程度で終わります。<b>あなたの回答は一切追跡しません！</b>",
     "index_h2_perspectives": "結果について",
-    "index_p_perspectives": "<a href='results.html?a=0.00&b=87.50&c=85.00&d=95.00&e=25.00&f=87.50'>診断結果の例</a><br/>FemScaleでは、回答を<b>保守主義</b>、および、<b>リベラル</b>、<b>ラディカル</b>、<b>社会主義</b>、 ならびに<b>カルチュラル・フェミニズム</b>、および、<b>ウーマニズム</b>の、計6分派の主張にどれほど一致するかで分析します。また、あなたの「フェミニスト・スコア (<b>FemScore</b>)」を算出します。より詳しい情報は、<a href='additional_info.html'>もっと詳しく</a>をごらんください。",
+    "index_p_perspectives": "<a href='results.html?a=0.00&b=87.50&c=85.00&d=95.00&e=25.00&f=87.50'>診断結果の例</a><br/>FemScaleでは、回答を<b>保守主義</b>、および、<b>リベラル</b>、<b>ラディカル</b>、<b>社会主義</b>、<b>カルチュラル・フェミニズム</b>、そして<b>ウーマニズム</b>計6種の思想のそれぞれが主張することにどれほど一致するかで、分析します。また、あなたの「フェミニスト・スコア (<b>FemScore</b>)」を算出します。より詳しい情報は、<a href='additional_info.html'>もっと詳しく</a>をごらんください。",
     "index_h2_notice": "注意",
     "notice_important": "各質問文の著作権はHenley (1989, 1997)にあります。<b>FemScaleは、FPS-2の著作者らとの提携、連携、または著作者らによる公認、支援、その他の著作者らとの公的な関連をもっていません。</b>。FemScaleは、フェミニズムに興味のある人に勉強の手立てとして活用していただくことを目的として、FPS-2を参考にしています。",
     "notice_before": "下記は、The Feminist Perspective Scaleの作成者による警告です：",
@@ -134,5 +134,8 @@
     "ideology_womanism_desc": "英語名： Womanist。ウーマニストは、白人女性中心のフェミニズムに対抗し、黒人を始めとする非白人の女性が中心となる、ないしはより明示的に含まれる、より包括的な女性解放運動を主張します。性差別だけでなく、人種や経済に基づく差別や格差も強調します。この語をつくった小説家・詩人のAlice Walkerによれば、「ウーマニズムとフェミニズムの関係は、紫色とラベンダー色の関係と同じ（ \"Womanist is to feminist as purple is to lavender\"）」。<ul><li><a href='https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AA%E3%82%B9%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AB%E3%83%BC'>アリス・ウォーカー</a></li><li><a href='https://en.wikipedia.org/wiki/Womanism'>Womanism - Wikipedia</a></li></ul>",
     "tweet_text_before": "わたしは",
     "tweet_text_result": "あなたは",
-    "tweet_text_after": "！あなたは？"
+    "tweet_text_after": "！あなたは？",
+    "info_h2_perspectives": "「思想」について",
+    "info_p_perspectives1": "FemScale、またこれの元となったFPS-2では、を<b>保守主義</b>、および、<b>リベラル</b>、<b>ラディカル</b>、<b>社会主義</b>、<b>カルチュラル・フェミニズム</b>、そして<b>ウーマニズム</b>の6分派をサブスケールとして用い、それぞれの主張に回答がどれほど一致しているかを計算して、女性に関する問題へのあなたの価値観を分析します。マルクス主義フェミニズムは、アメリカにおいてあまり影響力を持っていなかったため、基準として採用されませんでした（Henleyet al., 1998）。現在登録されている分派を、簡単な説明とともに、下記に一覧として提示します：",
+    "info_p_perspectives_limitations": "ここで強調したいのは、FemScaleおよびFPS-2は、トランスフォビアに関する議論やインターセクショナリティに関する考察など、現代のフェミニストの価値観が十分に反映されているとは言えず、限界があるということです。診断で用いられる質問自体も問題があり、offensiveなものも含まれています。これらの課題の解消に向けて、質問や登録されている思想などをアップデートしていく予定です。FemScaleの制作者はインクルーシブな、「みんなのため」のフェミニズム運動に賛同しています。"
 }
