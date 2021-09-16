@@ -49,11 +49,6 @@ p.ref {
     margin:0;
     font-size: 0.8em
 }        
-
-p.download {
-    text-align: left;
-    margin: 0;
-}
 span.reference {
     display:inline-block;
     text-indent: -2em;
