@@ -2,7 +2,7 @@
 
 
 ## About
-FemScale (femscale.github.io) is a free online tool for measuring and analysing your attitudes towards women. This project aims to educate those who are interested in feminism.
+FemScale (https://femscale.github.io) is a free online tool for measuring and analysing your attitudes towards women. This project aims to educate those who are interested in feminism.
 女性に関する問題にへのあなたの価値観を測り、分析するオンライン診断です。このプロジェクトは、フェミニズムに興味のある人に勉強の手立てとして活用していただくことを目的として、作成されています。
 
 ## Credits
