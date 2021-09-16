@@ -28,21 +28,26 @@
     <hr>
 
 <h1 data-i18n="result_h1">Results</h1>
-<div class="result_wrapper">
+<div class="info_wrapper">
     <div class="section-wrapper">
-        <h2 data-i18n="result_h2_match">Closest Match:<span class="weight-300" id="ideology-label"></span></h2>
-        <div class="text-wrapper">
-            <p data-i18n="result_p">You can send these results by copying and pasting the URL at the top of the page or using the download link below.</p>
-            <input id="copyTarget" type="text" value="https://femscale.github.io" readonly>
-            <button onclick="copyToClipboard()">Copy URL</button>
+        <h2 data-i18n="result_h2_match">Closest Match:</h2>
+         <div class="text-wrapper">
+            <span class="weight-300" id="ideology-label"></span>
+            <p data-i18n="result_p">Send these results by copying and pasting the URL or using the download link below!</p>
+            <div class="share">
+                <input id="copyTarget" type="text" value="https://femscale.github.io" readonly>
+                <button id="btnCopyurl" onclick="copyToClipboard()">Copy</button>
+                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=femscale" class="twitter-share-button">Tweet!</a></p>
+            </div>
         </div>
     </div>
 </div>
+<hr>
 <div class="result_wrapper">
     <div class="section-wrapper">
         <div class="image-wrapper">
-            <p class="download"><a id="btnDownload" data-i18n="result_download" download="femscale_result.png" href="">Download Result</a></p>
-                <canvas id="myChart"></canvas>
+            <a id="btnDownload" download="femscale_results.png" href="">Download</a>
+            <canvas id="myChart"></canvas>
             <p class="ref" data-i18n="result_p_ref">Values for mean subscale scores ("avg.") are cited from Table 4, Column "Nonstudent sample" published in the following:</p><span class='reference'>Henley, N. M., Meng, K., Brien, D. O., McCarthy, W. J., Sockloskie, R. J. (1998). Developing a scale to measure the diversity of feminist attitudes. Psychology of Women Quarterly, 22, 317–348. <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>https://doi.org/10.1111/j.1471-6402.1998.tb00158.x</a></span>
         </div>
     </div>
@@ -50,9 +55,6 @@
         <div class="text-wrapper">
             <p style="font-style: italic" data-i18n="coming_soon">Short desriptions for each perspectives coming soon!</p>
             <p id="ideodesc-label"></p>
-            <div class="twitter-share">
-                <p id="twitter-share-button"><a href="https://twitter.com/share?url=https://femscale.github.io&text=I%20am%20a%20feminist%21%20What%20about%20you%3F&hashtags=femscale" class="twitter-share-button">Tweet!</a></p>
-            </div>
         </div>
     </div>
 </div>    
@@ -66,19 +68,18 @@
         </div>    
     </div>
 </div>
-<div class="result_wrapper">
-    <div class="section-wrapper">
-        <h2 data-i18n="result_h2_issues">I don't like my scores!</h2>
-        <div class="text-wrapper">
-            <p data-i18n="result_p_issues">Please remember that you are not intended to get a 100% score in any of the categories. The point of the quiz is to challenge your views and understand the various perspectives feminism offer. If you have any suggestions or constructive criticism, please open an issue on the <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>.</p>
-        </div>
-    </div>
-</div>
-<div class="result_wrapper">
+<hr>
+<div class="index_wrapper">
     <div class="section-wrapper">
         <h2 data-i18n="result_h2_feedback">Feedback</h2>
         <div class="text-wrapper">
             <p data-i18n="result_p_feedback">FemScale respects your privacy. However, we still want a way to get your feedback. If you can help us, please fill out <a href='https://forms.gle/VfKqtp6vNMKBMoRm8'>this form</a> (English and Japanese available)! <b>We will ask you to paste the Results URL (or type in the Results by hand).</b> Also, please help us improve the quiz at our <a href='https://github.com/femscale/femscale.github.io'>GitHub Page</a>!</p>
+        </div>
+    </div>
+    <div class="section-wrapper">
+        <h2 data-i18n="result_h2_otherquiz">Other political quizzes</h2>
+        <div class="text-wrapper">
+            <p data-i18n="result_p_otherquiz">Want to know more about your political views and values? Check out <a href='https://leftvalues.github.io/'>LeftValues</a> if you are left-leaning, and <a href='https://rightvaluestest.github.io'>RightValues</a> if you are right-leaning. Also, don't forget to check out the original <a href='https://8values.github.io/'>8values</a>!</p>
         </div>
     </div>
 </div>
@@ -95,7 +96,7 @@
 </div>
 <HR>
 <section>
-<button data-i18n="result_back" class="start" onclick="location.href='index.html';">Restart</button><br>
+<button data-i18n="result_back" class="button start" onclick="location.href='index.html';">Restart</button><br>
 </section>
 
 
