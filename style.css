@@ -49,6 +49,7 @@ p.ref {
     margin:0;
     font-size: 0.8em
 }        
+
 span.reference {
     display:inline-block;
     text-indent: -2em;
@@ -80,9 +81,9 @@ h3 {
     margin-bottom: 0;
     text-align: left;
 }
-h3.ideology {
-    font-size:1.2em;
-    background-color:#e19ce2;
+h3.ideology_result {
+    font-size:1.5em;
+    color:#cd59cf;
     text-align:center;
     font-weight:bold;
 }
@@ -249,7 +250,7 @@ img.center {
     padding-top:2.5em;
     padding-left: auto;
     padding-right:auto;
-}
+}                            
 .desc_wrapper {
     width:100%;
     padding-top:0.25em;
