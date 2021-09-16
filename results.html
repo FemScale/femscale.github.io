@@ -32,7 +32,7 @@
     <div class="section-wrapper">
         <h2 data-i18n="result_h2_match">Closest Match:</h2>
          <div class="text-wrapper">
-            <span class="weight-300" id="ideology-label"></span>
+            <p id="ideology-label"  style="text-align:center;font-weight:bold;"></p>
             <p data-i18n="result_p">Send these results by copying and pasting the URL or using the download link below!</p>
             <div class="share">
                 <input id="copyTarget" type="text" value="https://femscale.github.io" readonly>
@@ -46,7 +46,9 @@
 <div class="result_wrapper">
     <div class="section-wrapper">
         <div class="image-wrapper">
-            <a id="btnDownload" download="femscale_results.png" href="">Download</a>
+            <div class="share">
+                <a id="btnDownload" download="femscale_results.png" href="">Download</a>
+            </div>
             <canvas id="myChart"></canvas>
             <p class="ref" data-i18n="result_p_ref">Values for mean subscale scores ("avg.") are cited from Table 4, Column "Nonstudent sample" published in the following:</p><span class='reference'>Henley, N. M., Meng, K., Brien, D. O., McCarthy, W. J., Sockloskie, R. J. (1998). Developing a scale to measure the diversity of feminist attitudes. Psychology of Women Quarterly, 22, 317–348. <a href='https://doi.org/10.1111/j.1471-6402.1998.tb00158.x'>https://doi.org/10.1111/j.1471-6402.1998.tb00158.x</a></span>
         </div>
