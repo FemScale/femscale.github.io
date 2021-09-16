@@ -80,7 +80,12 @@ h3 {
     margin-bottom: 0;
     text-align: left;
 }
-
+h3.ideology {
+    font-size:1.2em;
+    background-color:#e19ce2;
+    text-align:center;
+    font-weight:bold;
+}
 @media screen and (min-width: 800px) {
     body {
         padding-left: 1em;
@@ -239,6 +244,12 @@ img.center {
     padding-left: auto;
     padding-right:auto;
 }
+.nopadding_section-wrapper {
+    width:100%;
+    padding-top:2.5em;
+    padding-left: auto;
+    padding-right:auto;
+}
 .desc_wrapper {
     width:100%;
     padding-top:0.25em;
@@ -278,7 +289,7 @@ img.center {
     .result_wrapper {
         align-items: center;
     }    
-    .section-wrapper {
+    .nopadding_section-wrapper,.section-wrapper {
         display: block;
         padding-top: 1.5em;
     }
