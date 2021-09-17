@@ -73,7 +73,7 @@
     "inst_gotit": "Got it!",
     "inst_nvm": "Go back",
     "result_h1": "Results",
-    "result_p": "Send these results by copying and pasting the URL or using the download link below (screenshots are more than welcome)!",
+    "result_p": "Send these results by copying and pasting the URL or using the download link below (screenshots are more than welcome)!<br>*<b>"Download" button may not work on Chrome for iOS!</b> If anyone knows a solution to this problem please let us know at GitHub! (The downloaded file can still be opened by adding ".png" to the end of its name).",
     "result_download": "Download Result Image",
     "result_p_ref": "Values for mean subscale scores (\"avg.\") are cited from Table 4, Column \"Nonstudent sample\" published in the following:",
     "result_h2_match": "Closest Match:",
