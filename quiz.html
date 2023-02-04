@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex">
+    
+    <title>Quiz - Feminist Perspective Scale Online</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href='reset.css' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="favicon/icon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/icon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/icon-192x192.png">
+    <link rel="apple-touch-icon" type="image/png" href="favicon/apple-touch-icon-180x180.png">
+</head>
+
+
+<body>
+    <script type="application/javascript" src="questions.js">
+    </script>
+     <h1 class="top">FemScale</h1>					 
+    <hr>
+	
+    <h2 data-i18n="quiz_loading" style="text-align:center;" id="question-number">Loading...</h2>
+    <div class="question_wrapper">
+        <p class="question" id="question-text">Loading...</p>
+    </div>
+    <button data-i18n="quiz_strongly_agree" class="button stronglyAgree" onclick="nextQuestion(6.0)">Strongly Agree</button> <br>																						  
+    <button data-i18n="quiz_agree" class="button agree" onclick="nextQuestion(4.5)">Agree</button> <br>																						 
+    <button data-i18n="quiz_neutral" class="button neutral" onclick="nextQuestion(3.0)">Neutral/Unsure</button> <br>																										  
+    <button data-i18n="quiz_disagree" class="button disagree" onclick="nextQuestion(1.5)">Disagree</button> <br>																								 
+    <button data-i18n="quiz_strongly_disagree" class="button stronglyDisagree" onclick="nextQuestion(0)">Strongly Disagree</button> <br>																											   
+    <button data-i18n="quiz_back" class="small_button" onclick="prevQuestion()" id="back_button">Back</button>
+    <button data-i18n="quiz_back" class="small_button_off" id="back_button_off">Back</button>
+	<br>
+
+    <!-- JavaScript for the test itself -->		  							 
+    <script type="application/javascript" src="i18n.js"></script>
+    <script>													 
+       let maxA, maxB, maxC, maxD, maxE, maxF // Max possible scores
+        maxA = maxB = maxC = maxD = maxE = maxF = 0        
+        let a, b, c, d, e, f // User's scores
+        a = b = c = d = e = f =  0
+        let qn = [] // Array of question numbers
+        let qi = 0 // Question index
+        populateQn()
+        let prevAnswer = null
+        function initQuestion () {
+        document.getElementById('question-text').innerHTML = i18n.getString(`question_${qn[qi]}`)
+        document.getElementById('question-number').innerHTML = i18n.getString('quiz_question_of', {
+            count: qi + 1,
+            total: Object.size(questions)
+        })
+        if (prevAnswer == null) {
+            document.getElementById('back_button').style.display = 'none'
+            document.getElementById('back_button_off').style.display = 'block'
+        } else {
+            document.getElementById('back_button').style.display = 'block'
+            document.getElementById('back_button_off').style.display = 'none'
+        }
+        }
+        function nextQuestion (mult) { // eslint-disable-line no-unused-vars
+        a += mult * questions[`question_${qn[qi]}`].a 
+        b += mult * questions[`question_${qn[qi]}`].b
+        c += mult * questions[`question_${qn[qi]}`].c
+        d += mult * questions[`question_${qn[qi]}`].d
+        e += mult * questions[`question_${qn[qi]}`].e
+        f += mult * questions[`question_${qn[qi]}`].f
+													 
+        qi++
+        prevAnswer = mult
+        if (qn[qi] < Object.size(questions)) {
+            initQuestion()
+        } else {
+            results()
+        }
+        }
+        function prevQuestion () { // eslint-disable-line no-unused-vars
+        if (prevAnswer == null) {
+            return
+        }
+        qi--
+        a -= prevAnswer * questions[`question_${qn[qi]}`].a
+        b -= prevAnswer * questions[`question_${qn[qi]}`].b
+        c -= prevAnswer * questions[`question_${qn[qi]}`].c
+        d -= prevAnswer * questions[`question_${qn[qi]}`].d
+        e -= prevAnswer * questions[`question_${qn[qi]}`].e
+        f -= prevAnswer * questions[`question_${qn[qi]}`].f
+																						
+         prevAnswer = null
+        initQuestion()
+        }
+        
+        function calcScore (score, max) {
+        return (100 * score / max).toFixed(2)
+        }
+
+        function populateQn() {
+            // Fill with incrementing numbers representing question numbers.
+            for (let questionCount = 0; questionCount < Object.size(questions); questionCount++) {
+                qn.push(questionCount)
+            }
+            // Shuffle qn
+            for (let currentIndex = Object.size(questions) - 1; currentIndex > 0; currentIndex--) {
+                randomIndex = Math.floor(Math.random() * currentIndex)
+                
+                // Swap question order
+                let temp = qn[currentIndex]
+                qn[currentIndex] = qn[randomIndex]
+                qn[randomIndex] = temp
+            }
+        }
+
+        function results () {
+        window.location.href = 'results.html' +
+                        `?a=${calcScore(a, maxA)}` +
+                        `&b=${calcScore(b, maxB)}` +
+                        `&c=${calcScore(c, maxC)}` +
+                        `&d=${calcScore(d, maxD)}` +
+                        `&e=${calcScore(e, maxE)}` +
+                        `&f=${calcScore(f, maxF)}`
+												  
+        }
+        loadTranslation().then(() => {
+        initQuestion()
+        for (let i = 0; i < Object.size(questions); i++) {
+            maxA += Math.abs(6 * questions[`question_${i}`].a)
+            maxB += Math.abs(6 * questions[`question_${i}`].b)
+            maxC += Math.abs(6 * questions[`question_${i}`].c)
+            maxD += Math.abs(6 * questions[`question_${i}`].d)
+            maxE += Math.abs(6 * questions[`question_${i}`].e)
+            maxF += Math.abs(6 * questions[`question_${i}`].f)
+														  
+        }
+        })
+    </script>
+</body>
+
+</html>	   
